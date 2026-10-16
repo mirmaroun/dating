@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="stars-container"></div>
+    <div class="container">
+
+<h2>💞</h2>
+<h1>🥳 Great... 😘 You actually said yes!!!</h1>
+        <h3>I am so happy, I thought you would say no!!! 😜</h3>
+         <button class="buttonokey" onclick="gotothirdpage()">Okey! Okey! ... Go<span>❤</span></button>
+    </div>
+</body>
+</html>
+
+
+
+
+<script>
+  // Function to create a star at a random position
+  function createStar() {
+    const star = document.createElement('span');
+    star.textContent = '★';
+    
+    // Random color
+    const colors = ['white', 'yellow', 'orange', 'lightblue', 'pink', 'violet'];
+    star.style.color = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Random position
+    const x = Math.random() * window.innerWidth;
+    const y = Math.random() * window.innerHeight;
+    star.style.left = `${x}px`;
+    star.style.top = `${y}px`;
+    
+    star.classList.add('star');
+    document.body.appendChild(star);
+
+    // Show star
+    requestAnimationFrame(() => {
+      star.style.opacity = 1;
+    });
+
+    // Hide star after 1 second
+    setTimeout(() => {
+      star.style.opacity = 0;
+      // Remove from DOM after fade
+      setTimeout(() => star.remove(), 300);
+    }, 1000);
+  }
+
+  // Show stars for 5 seconds
+  const startTime = Date.now();
+  const interval = setInterval(() => {
+    if (Date.now() - startTime > 5000) {
+      clearInterval(interval);
+    } else {
+      createStar();
+    }
+  }, 100); // Creates ~50 stars in 5 seconds
+</script>
+
+
+<script>
+    function gotothirdpage(){
+        window.location.href="thirdpage.html";
+    }
+</script>

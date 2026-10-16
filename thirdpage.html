@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1>Please choose, all fields are mandatory 🙂</h1>
+
+        <form onsubmit="sendMail(event); return false;" class="containerinputs">
+            <div class="datetime">
+                <label>Restaurant</label>
+                <select id="resto" required>
+                    <option value="baguettegourmet" Selected>Baguette Gourmet *****</option>
+                    <option value="Couqley">Couqley French Bistro Dbayeh ****</option>
+                    <option value="Cafeduport">Cafe du port ***</option>
+                    <option value="100halaatcl">100 Hala ATCL ****</option>
+                    <option value="Bamboo">Bamboo</option>
+                    <option value="sanyouseaview">Sanyour Sea View ***</option>
+                    <option value="BeytSokhn">Beyt Sokhn ***</option>
+                    <option value="provencialkaslik">Provencial Kaslik ****</option> 
+                    <option value="Astjeita">AST Jeita ***</option>
+                    <option value="juccygrill">Juccy Grill ****</option>
+                </select>
+            </div>
+            <div class="datetime"><label>Date</label><input type="date" id="dated" required></div>
+            <div class="datetime"><label>Time</label><input type="time" id="timed" required></div>
+            <button class="buttonsend">Confirmed ... <span>❤</span></button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
+ <script>
+    function sendMail(event) {
+        
+        event.preventDefault();
+
+      // Get values by ID or class
+      const restaurant = document.getElementById("resto").value;   //name
+      const datedate = document.getElementById("dated").value; //  email
+      const timedate = document.getElementById("timed").value;   //message
+    console.log(datedate);
+    console.log(restaurant);
+      // Build subject and body
+      const subject = "Date submitted by Diana";
+      const body = "congratulation, Diana agreed your date at " + restaurant + " on " + datedate + " at " + timedate
+                 + "%0D%0A"
+
+
+      // Open mail client
+      window.location.href = "mailto:mirmaroun@hotmail.com?subject=" 
+                           + encodeURIComponent(subject) 
+                           + "&body=" + body;
+                           
+        
+    }
+  </script>
