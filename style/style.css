@@ -78,7 +78,7 @@ h1{
     flex-direction:row;
     gap:50px;
     justify-self:center;
-    
+    justify-content:center;
 }
 
 span{
@@ -92,18 +92,19 @@ span{
     border:transparent;
     background-color:rgb(241, 117, 179);
     font-size:30px;
+    align-items:center;
     box-shadow: 6px 4px 8px rgb(247, 177, 212);;
     
 }
 .buttonyes{
     position:absolute;
-    left:20%;
+    margin-right: 200px;
     color:#ffeafef8;
 }
 
 .buttonno{
     position:absolute;
-    left:60%;
+    margin-left:200px;
     color: #ffeafef8;
 }
 
@@ -136,9 +137,6 @@ h2{
     font-size:25px;
     box-shadow: 6px 4px 8px rgb(247, 177, 212);
 }
-
-
-
 
 
 .star {
@@ -175,7 +173,6 @@ h2{
 
 h4{
     color:black;
-
 }
 
 
@@ -211,7 +208,7 @@ select, input{
 @media screen and (max-width: 780px){
 
     .container{
-        width:95%;
+        width:90%;
         gap:30px;
         height:650px;
     }
@@ -224,13 +221,13 @@ img{
 
 .buttonyes{
     position:absolute;
-    left:15%;
+    margin-right:150px;
     color:#ffeafef8;
 }
 
 .buttonno{
     position:absolute;
-    left:55%;
+    margin-left:150px;
     color: #ffeafef8;
 }
 
