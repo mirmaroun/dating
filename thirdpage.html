@@ -9,11 +9,19 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="containerinput">
         <br>
         <h1>Please choose, all fields are mandatory 🙂</h1>
 
         <form onsubmit="sendMail(event); return false;" class="containerinputs">
+            <div class="datetime">
+                <label>Your full name</label>
+                <input type="text" id="nameperson" required placeholder="Please type your name">
+            </div>
+            <div class="datetime">
+                <label>Beloved email</label>
+                <input type="email" id="emaildreceiver" required placeholder="Email">
+            </div>
             <div class="datetime">
                 <label>Restaurant</label>
                 <select id="resto" required>
@@ -45,19 +53,25 @@
         event.preventDefault();
 
       // Get values by ID or class
-      const restaurant = document.getElementById("resto").value;   //name
+      const namep = document.getElementById("nameperson").value;
+      const emaildr = document.getElementById("emaildreceiver").value;
+      const restaurant = document.getElementById("resto");   //name
       const datedate = document.getElementById("dated").value; //  email
       const timedate = document.getElementById("timed").value;   //message
     console.log(datedate);
     console.log(restaurant);
+
+
+    const restaurantoption = restaurant.options[restaurant.selectedIndex].text;
       // Build subject and body
-      const subject = "Date submitted by Diana";
-      const body = "congratulation, Diana agreed your date at " + restaurant + " on " + datedate + " at " + timedate
+
+      const subject = "Date submitted by " + namep;
+      const body = "Congratulation, your beloved agreed your date at " + restaurantoption + " on " + datedate + " at " + timedate
                  + "%0D%0A"
 
 
       // Open mail client
-      window.location.href = "mailto:mirmaroun@hotmail.com?subject=" 
+      window.location.href = "mailto:" + emaildr +"?subject="
                            + encodeURIComponent(subject) 
                            + "&body=" + body;
                            
