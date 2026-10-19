@@ -251,11 +251,11 @@ input {
     label {
 
     width: 100px;
-    font-size: 22px;
+    font-size:18px;
     }
 select,
 input {
-    font-size: 21px;
+    font-size: 18px;
     width: 200px;
 }
 }
