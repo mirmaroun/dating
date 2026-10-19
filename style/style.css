@@ -5,7 +5,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
- font-family: niconne;
+    font-family: niconne;
 }
 
 body, html{
@@ -24,6 +24,7 @@ body, html{
     background-color: rgb(247, 226, 247);
     border: transparent;
     text-align:center;
+    justify-content:center;
     align-items:center;
     border-radius:15px;
     display:flex;
@@ -32,8 +33,30 @@ body, html{
     box-shadow: 3px 3px 10px grey;
 }
 
+input[type="text"]::placeholder, input[type="email"]::placeholder{
+    color: white;
+}
+
+.containerinput{
+    position:relative;
+    width:750px;
+    height:680px;
+    background-color: rgb(247, 226, 247);
+    border: transparent;
+    text-align:center;
+    align-items:center;
+    border-radius:15px;
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+    box-shadow: 3px 3px 10px grey;
+      
+}
+
+
+
 img{
-    padding-top:30px;
+    /* padding-top:30px; */
     width:120px;
     height:auto;
 }
@@ -55,6 +78,7 @@ h1{
     flex-direction:row;
     gap:50px;
     justify-self:center;
+    
 }
 
 span{
@@ -157,7 +181,7 @@ h4{
 
 label{
 
-    width:100px;
+    width:150px;
     height:27px;
     font-size:27px;
     color:black;
@@ -166,7 +190,7 @@ label{
 select, input{
     padding-left:5px;
     font-size:25px;
-    width:200px;
+    width:270px;
     color:white;
     background-color:rgb(255, 35, 35);
 }
@@ -181,4 +205,33 @@ select, input{
     background-color:rgb(241, 117, 179);
     font-size:25px;
     box-shadow: 6px 4px 8px rgb(247, 177, 212);
+}
+
+
+@media screen and (max-width: 780px){
+
+    .container{
+        width:80%;
+        gap:30px;
+        height:650px;
+    }
+
+img{
+    /* padding-top:30px; */
+    width:80px;
+    height:auto;
+}
+
+.buttonyes{
+    position:absolute;
+    left:15%;
+    color:#ffeafef8;
+}
+
+.buttonno{
+    position:absolute;
+    left:55%;
+    color: #ffeafef8;
+}
+
 }
