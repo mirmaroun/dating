@@ -211,7 +211,7 @@ select, input{
 @media screen and (max-width: 780px){
 
     .container{
-        width:80%;
+        width:90%;
         gap:30px;
         height:650px;
     }
